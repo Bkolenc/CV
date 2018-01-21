@@ -1,2 +1,12 @@
-Base de données
-Backoffice
+ 	Base de données
+OK		Expériences
+		Compétences
+	Backoffice
+OK		API
+		requêtes ajax
+		fichier js principal
+		fichier php principal
+		CSS
+	Connexion
+	Accueil avec carte
+	
