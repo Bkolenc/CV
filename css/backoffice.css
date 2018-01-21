@@ -1,0 +1,83 @@
+#divMission
+{
+	display:inline-block;
+	vertical-align:top;
+}
+
+#texteMission
+{
+	height:50px;
+}
+
+.blackLine
+{
+	display:inline-block;
+	width:1px;
+	text-align:center;
+	background-color:black;
+	height:400px;
+}
+.blackLineContainer
+{
+	width:3%;
+	display:inline-block;
+}
+.date
+{
+	display:inline-block;
+	margin-bottom:0;
+}
+.del
+{
+	background-color:red;
+}
+.formu
+{
+	display:inline-block;
+	width:30%;
+	vertical-align:top;
+}
+.horizontalLine
+{
+	border-bottom:solid black 1px;
+	width:100%;
+	margin-bottom:20px;
+}
+
+h2
+{
+	text-align:center;
+	margin-bottom:50px;
+}
+select
+{
+	display:block;
+	margin-bottom:20px;
+}
+input
+{
+	display:block;
+	margin-bottom:10px;
+	width:80%;
+}
+textarea
+{
+	display:block;
+	margin-bottom:10px;
+	width:80%;
+}
+button
+{
+	display:block;
+	left:calc(100%-50px);
+	text-align:center;
+	background-color:green;
+	color:white;
+	height:20px;
+	width:50px;
+	border-radius:5px;
+	border:solid black 1px;
+	margin-bottom:20px;
+	margin-left:auto;
+	margin-right:10px;
+}

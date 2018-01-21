@@ -1,0 +1,42 @@
+EXPERIENCES
+Une carte avec des points pour chaque expérience.
+
+Au hover : nom de l'entreprise, logo
+Au clic : description de mon expérience, exemples éventuels
+
+Table lieu
+idlieu, geoloc, entreprise, commune
+
+Table expérience
+idExp, idlieu, date début, date fin, intitulé poste, 
+
+Table mission
+idMission, idExp, description
+
+COMPETENCES
+Une petite boîte à outils simplifiée qui s'ouvre et fait apparaître différents mots clés, développement, journalisme, qui eux même se développent
+
+CREATE TABLE experiences (
+    idExp int NOT NULL AUTO_INCREMENT,
+    idLieu int NOT NULL,
+	intitule varchar,
+    debut date,
+	fin date,
+    PRIMARY KEY (idExp),
+    FOREIGN KEY (idLieu) REFERENCES lieu(idLieu)
+);
+
+CREATE TABLE missions (
+	idmission int NOT NULL AUTO_INCREMENT,
+	idexp int NOT NULL,
+	textemission text,
+	PRIMARY KEY (idmission),
+	FOREIGN KEY (idexp) REFERENCES experience(idexp)
+);
+
+ALTER TABLE cv.experiences
+   DROP CONSTRAINT idlieu;
+
+ALTER TABLE dbo.T2
+   ADD CONSTRAINT FK_T1_T2_Cascade
+   FOREIGN KEY (EmployeeID) REFERENCES dbo.T1(EmployeeID) ON DELETE CASCADE
