@@ -10,7 +10,7 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
     <script src="js/envoisAjax.js" ></script>
-    <script src="js/progPrincipal.js" ></script>
+    
     <body>
         <h2>Insérez ou modifiez une expérience</h2>
         
@@ -99,4 +99,5 @@
             <button class="del" type="button" id="delLien" >Del</button> 
         </div>
     </body>
+    <script src="js/progPrincipal.js" ></script>
 </html>

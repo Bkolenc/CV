@@ -3,7 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "root";
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=cv", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=cv;charset=utf8", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
@@ -29,7 +29,8 @@ catch(PDOException $e)
 ?>
 
 <?php
-if(isset($_POST))
+
+if(isset($_POST['action']))
 {   
     //INITIALISATION
         if($_POST['action']=="initialisation")
@@ -42,6 +43,7 @@ if(isset($_POST))
     //LIEUX
         if($_POST['action']=="selectLieu")
         {
+            
         // On récupère la variable transmise par la requête ajax
             $idlieu=$_POST['selectLieu'];
             
@@ -53,7 +55,7 @@ if(isset($_POST))
         // On va chercher toutes les expériences correspondant au lieu
             $XPs=$conn->prepare("SELECT * FROM `experiences` WHERE idlieu= ?");
             $XPs->execute(array($idlieu));
-            $tableauXPs=$Xps->fetchAll(PDO::FETCH_ASSOC);
+            $tableauXPs=$XPs->fetchAll(PDO::FETCH_ASSOC);
             $arr = array("lieu"=>$recapLieu, "XPs"=>$tableauXPs);
 		}
         if($_POST['action']=="goLieu")
