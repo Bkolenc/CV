@@ -110,7 +110,7 @@ if(isset($_POST['action']))
             $liens->execute(array($idXP));
             $tableauLiens=$liens->fetchAll(PDO::FETCH_ASSOC);
             
-            $arr = array("XP"=>$recapXP, "missions"=>$tableauXPs, "liens"=>$tableauLiens);
+            $arr = array("XP"=>$recapXP, "missions"=>$tableauMissions, "liens"=>$tableauLiens);
 		}
         if($_POST['action']=="goXP")
         {
@@ -197,7 +197,7 @@ if(isset($_POST['action']))
             $lien=$conn->prepare("SELECT * FROM `liens` WHERE idlien = ?");
             $lien->execute(array($idLien));
             $recapLien=$lien->fetchAll(PDO::FETCH_ASSOC);
-            $arr = array("resultat"=>$recapLien);
+            $arr = array("lien"=>$recapLien);
 		}
         if($_POST['action']=="goLien")
         {
