@@ -12,7 +12,7 @@ function initialisation()
                     });
                         },
                 error: function(data){
-                    console.log("prout");
+                    console.log("ça bugue ! Mais embauchez-moi quand même :(");
                 }
             }); 
 }
@@ -52,7 +52,7 @@ function selectLieu(selectLieu) // Actions quand on sélectionne un lieu
                     });
                         },
                 error: function(data){
-                    console.log("prout");
+                    console.log("ça bugue ! Mais embauchez-moi quand même :(");
                     console.log(data);
                 }
             }); 
@@ -123,7 +123,7 @@ function selectXP(selectXP) // Actions quand on sélectionne une expérience
                     });
                         },
                 error: function(data){
-                    console.log("prout");
+                    console.log("ça bugue ! Mais embauchez-moi quand même :(");
                     console.log(data);
                 }
             }); 
@@ -146,7 +146,7 @@ function selectMission(selectMission)
                    
                         },
                 error: function(data){
-                    console.log("prout");
+                    console.log("ça bugue ! Mais embauchez-moi quand même :(");
                     console.log(data);
                 }
             }); 
@@ -171,7 +171,7 @@ function selectLien(selectLien)
                    
                         },
                 error: function(data){
-                    console.log("prout");
+                    console.log("ça bugue ! Mais embauchez-moi quand même :(");
                     console.log(data);
                 }
             }); 
@@ -196,7 +196,7 @@ function goLieu(selectLieu, coord, entreprise, commune, logo)
                         initialisation();
                             },
                     error: function(data){
-                        console.log("prout");
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
                         console.log(data);
                     }
                 }); 
@@ -219,7 +219,7 @@ function goXP(selectXP, selectLieu1, intitule, moisDebut, anneeDebut, moisFin, a
 
                             },
                     error: function(data){
-                        console.log("prout");
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
                         console.log(data);
                     }
                 }); 
@@ -242,7 +242,7 @@ function goMission(selectMission, selectXP1, texteMission)
 
                             },
                     error: function(data){
-                        console.log("prout");
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
                         console.log(data);
                     }
                 }); 
@@ -265,7 +265,97 @@ function goLien(selectLien, selectXP1, intituleLien, urlLien)
                         
                             },
                     error: function(data){
-                        console.log("prout");
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
+                        console.log(data);
+                    }
+                }); 
+}
+
+/////////////////////////
+// Delete
+/////////////////////////
+
+function deleteLieu(selectLieu)
+{
+    var dataToPost = "action=delLieu&selectLieu="+selectLieu;
+    $.ajax({   url:"cvAPI.php",
+                    type:"POST",
+                    data: dataToPost,
+                    dataType:'json',
+                    success: function (data) {
+                        console.log(data);
+                        swal("Lieu effacé");
+                        resetLieu();
+                        initialisation();
+                        
+                            },
+                    error: function(data){
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
+                        console.log(data);
+                    }
+                }); 
+}
+
+function deleteXP(selectXP)
+{
+    var dataToPost = "action=delXP&selectXP="+selectXP;
+    $.ajax({   url:"cvAPI.php",
+                    type:"POST",
+                    data: dataToPost,
+                    dataType:'json',
+                    success: function (data) {
+                        console.log(data);
+                        swal("Expérience effacée");
+                        resetXP();
+                        selectLieu($("select#selectLieu").val());
+                        
+                            },
+                    error: function(data){
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
+                        console.log(data);
+                    }
+                }); 
+}
+
+function deleteMission(selectMission)
+{
+    var dataToPost = "action=delMission&selectMission="+selectMission;
+    $.ajax({   url:"cvAPI.php",
+                    type:"POST",
+                    data: dataToPost,
+                    dataType:'json',
+                    success: function (data) {
+                        console.log(data);
+                        swal("Mission effacée");
+                        resetMission();
+                        resetLien();
+                        selectXP($("select#selectXP").val());
+                        
+                            },
+                    error: function(data){
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
+                        console.log(data);
+                    }
+                }); 
+}
+
+function deleteLien(selectLien)
+{
+    var dataToPost = "action=delLien&selectLien="+selectLien;
+    $.ajax({   url:"cvAPI.php",
+                    type:"POST",
+                    data: dataToPost,
+                    dataType:'json',
+                    success: function (data) {
+                        console.log(data);
+                        swal("Lien effacé");
+                        resetMission();
+                        resetLien();
+                        selectXP($("select#selectXP").val());
+                        
+                            },
+                    error: function(data){
+                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
                         console.log(data);
                     }
                 }); 

@@ -8,14 +8,14 @@
 			Debogage éventuel
 
 		requêtes ajax
-			Delete
+			Vérification des données avant envoi
 
 		fichier js principal
-			Debogage Create Read Update Jquery
-			Jquery delete
+			Debogage éventuel CRUD Jquery
 
 		fichier php principal
 			Gérer le responsive
+
 		CSS
 
 	Connexion

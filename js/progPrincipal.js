@@ -110,7 +110,7 @@ $("#goLieu").on("click", function(){
 
 $("#goXP").on("click", function(){
     var selectEXP=$("select#selectXP>option:selected").attr("value");
-    var selectLieu=$("select#selectLieu").val();
+    var selectLieu1=$("select#selectLieu").val();
     var intitule=$("#intitule").val();
     var moisDebut=$("#moisDebut").val();
     var anneeDebut=$("#anneeDebut").val();
@@ -118,7 +118,7 @@ $("#goXP").on("click", function(){
     var anneeFin=$("#anneeFin").val();
     if (intitule!="")
         {
-            goXP(selectEXP, selectLieu, intitule, moisDebut, anneeDebut, moisFin, anneeFin);
+            goXP(selectEXP, selectLieu1, intitule, moisDebut, anneeDebut, moisFin, anneeFin);
             console.log($("selectXP:selected").val());
             selectLieu($("select#selectLieu").val());
         }
@@ -159,6 +159,34 @@ $("#goLien").on("click", function(){
         swal("Tous les champs ne sont pas renseignés");
     }
 });
+
+/////////////////////////
+// Delete
+/////////////////////////
+$("#delLieu").on("click", function(){
+    var selectLieu=$("select#selectLieu").val();
+    console.log(selectLieu);
+    deleteLieu(selectLieu);
+});
+
+$("#delXP").on("click", function(){
+    var selectXP=$("select#selectXP").val();
+    
+    deleteXP(selectXP);
+});
+
+$("#delMission").on("click", function(){
+    var selectMission=$("select#selectMission").val();
+    
+    deleteMission(selectMission);
+});
+
+$("#delLien").on("click", function(){
+    var selectLien=$("select#selectLien").val();
+    
+    deleteLien(selectLien);
+});
+
 
 
 /////////////////////////

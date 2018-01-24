@@ -83,14 +83,18 @@ if(isset($_POST['action']))
         {
             $idLieu=$_POST["selectLieu"];
             
-            if($idLieu=!"none")
+            if($idLieu!="none")
             {
                 $delete=$conn->prepare("DELETE FROM `lieu` WHERE idlieu= ?");
-                $delete=execute(array($idlieu));
+                $delete->execute(array($idLieu));
                 
-                $arr = array("resultat"=>$idlieu);                
+                $arr = array("resultat"=>$idLieu);                
             }
-            $arr = array("resultat"=>"ERREUR");
+            else
+            {
+                $arr = array("resultat"=>"ERREUR");
+            }
+            
 		}
     
     //EXPERIENCES
@@ -138,10 +142,10 @@ if(isset($_POST['action']))
         {
             $idXP=$_POST["selectXP"];
             
-            if($idXP=!"none")
+            if($idXP!="none")
             {
                 $delete=$conn->prepare("DELETE FROM `experiences` WHERE idexp= ?");
-                $delete=execute(array($idXP));
+                $delete->execute(array($idXP));
                 
                 $arr = array("resultat"=>$idXP);                
             }
@@ -180,10 +184,10 @@ if(isset($_POST['action']))
         if($_POST['action']=="delMission")
         {
             $idMission=$_POST["selectMission"];
-            if($idMission=!"none")
+            if($idMission!="none")
             {
                 $delete=$conn->prepare("DELETE FROM `missions` WHERE idmission= ?");
-                $delete=execute(array($idMission));
+                $delete->execute(array($idMission));
                 
                 $arr = array("resultat"=>$idMission);                
             }
@@ -222,10 +226,10 @@ if(isset($_POST['action']))
         if($_POST['action']=="delLien")
         {
             $idLien=$_POST["selectLien"];
-            if($idLien=!"none")
+            if($idLien!="none")
             {
                 $delete=$conn->prepare("DELETE FROM `liens` WHERE idlien= ?");
-                $delete=execute(array($idLien));
+                $delete->execute(array($idLien));
                 
                 $arr = array("resultat"=>$idLien);                
             }
