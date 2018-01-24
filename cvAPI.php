@@ -117,8 +117,8 @@ if(isset($_POST['action']))
             $idXP=$_POST["selectXP"];
             $idlieu=$_POST["selectLieu"];
             $intitule=$_POST["intitule"];
-            $debut="01-".$_POST["moisDebut"]."-".$_POST["anneeDebut"];
-            $fin="01-".$_POST["moisFin"]."-".$_POST["anneeFin"];
+            $debut=$_POST["anneeDebut"]."-".$_POST["moisDebut"]."-01";
+            $fin=$_POST["anneeFin"]."-".$_POST["moisFin"]."-01";
             
             if($idXP=="none")
             {
@@ -130,8 +130,8 @@ if(isset($_POST['action']))
             else
             {
                 $update=$conn->prepare("UPDATE `experiences` SET idlieu= ? , intitule = ? , debut = ? , fin = ? WHERE idexp = ?");
-                $update->execute(array($geoloc, $entreprise, $commune, $logo, $idlieu));
-                $arr = array("resultat"=>array($idexp, $idlieu, $intitule, $debut, $fin));
+                $update->execute(array($idlieu, $intitule, $debut, $fin, $idXP));
+                $arr = array("resultat"=>array($idlieu, $intitule, $debut, $fin, $idXP));
             }
 		}
         if($_POST['action']=="delXP")

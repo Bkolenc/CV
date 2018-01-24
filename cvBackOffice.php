@@ -18,12 +18,12 @@
             <select id="selectLieu" name="selectLieu">
                 <option value="none">Insérer ou choisir un lieu</option>
             </select>
-            <input type="text" id="coord" name="coord" placeholder="Coordonnées" />
-            <input type="text" id="commune" name="commune" placeholder="Commune"/>
-            <input type="text" id="entreprise" name="entreprise" placeholder="Entreprise" />
-            <input type="text" id="logo" name="logo" placeholder="Chemin vers le logo" />
-            <button type="button" id="goLieu" >OK</button>
-            <button class="del" type="button" id="delLieu" >Del</button> 
+            <input type="text" class="lieu" id="coord" name="coord" placeholder="Coordonnées" />
+            <input type="text" class="lieu" id="commune" name="commune" placeholder="Commune"/>
+            <input type="text" class="lieu" id="entreprise" name="entreprise" placeholder="Entreprise" />
+            <input type="text" class="lieu" id="logo" name="logo" placeholder="Chemin vers le logo" />
+            <button type="button" id="goLieu" class="go" >OK</button>
+            <button class="del" type="button" id="delLieu" disabled="disabled" >Del</button> 
         </form>
         
         <div class="blackLineContainer"><div class="blackLine" ></div></div>
@@ -90,8 +90,8 @@
                 </p>
             </div>
             
-            <button type="button" id="goXP" class="XP" disabled="disabled">OK</button>
-            <button class="del XP" type="button" id="delXP" disabled="disabled">Del</button> 
+            <button type="button" id="goXP" class="XP go" disabled="disabled">OK</button>
+            <button class="del" type="button" id="delXP" disabled="disabled">Del</button> 
         </form>
         
         <div class="blackLineContainer"><div class="blackLine" ></div></div>
@@ -102,18 +102,19 @@
                 </select>
             </form>
             <textarea cols="40" rows="5" id="texteMission" class="mission" name="texteMission" placeholder="Description de la mission" disabled="disabled" ></textarea>
-            <button type="button" id="goMission" class="mission" disabled="disabled" >OK</button>
-            <button class="del mission" type="button" class="mission" id="delMission" disabled="disabled" >Del</button> 
+            <button type="button" id="goMission" class="go mission" disabled="disabled" >OK</button>
+            <button class="del" type="button" class="mission" id="delMission" disabled="disabled" >Del</button> 
             <div class="horizontalLine"></div>
             
-            <select id="selectLien" class="lien">
+            <select id="selectLien" class="lien" disabled="disabled">
                 <option value="none" >Sélectionnez ou insérez un nouveau lien</option>
             </select>
             <input type="text" id="intituleLien" class="lien" name="intituleLien" placeholder="Intitulé du lien" disabled="disabled" />
             <input type="text" id="urlLien" class="lien" name="urlLien" placeholder="URL du lien" disabled="disabled" />
-            <button type="button" id="goLien" class="lien" disabled="disabled" >OK</button>
-            <button class="del lien" type="button" id="delLien" disabled="disabled">Del</button> 
+            <button type="button" id="goLien" class="go lien" disabled="disabled" >OK</button>
+            <button class="del" type="button" id="delLien" disabled="disabled">Del</button> 
         </div>
     </body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/progPrincipal.js" ></script>
 </html>

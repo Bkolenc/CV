@@ -1,12 +1,24 @@
  	Base de données
-OK		Expériences
+		Réfléchir à une autre table nécessaire aux expériences (compétences utilisées ?)
+
 		Compétences
+
 	Backoffice
-OK		API
+		API
+			Debogage éventuel
+
 		requêtes ajax
+			Delete
+
 		fichier js principal
+			Debogage Create Read Update Jquery
+			Jquery delete
+
 		fichier php principal
+			Gérer le responsive
 		CSS
+
 	Connexion
+
 	Accueil avec carte
 	

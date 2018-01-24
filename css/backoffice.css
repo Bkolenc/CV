@@ -29,13 +29,21 @@
 }
 .del
 {
-	background-color:red;
+	background-color:#c23616;
+}
+.del:hover
+{
+	background-color:#e84118;
 }
 .formu
 {
 	display:inline-block;
 	width:30%;
 	vertical-align:top;
+}
+.go:hover
+{
+	background-color:#4cd137;
 }
 .horizontalLine
 {
@@ -71,7 +79,7 @@ button
 	display:block;
 	left:calc(100%-50px);
 	text-align:center;
-	background-color:green;
+	background-color:#44bd32;
 	color:white;
 	height:20px;
 	width:50px;
@@ -80,4 +88,17 @@ button
 	margin-bottom:20px;
 	margin-left:auto;
 	margin-right:10px;
+}
+
+button:disabled
+{
+	background-color:#7f8c8d;
+}
+button:disabled:hover
+{
+	background-color:#7f8c8d;
+}
+select:disabled
+{
+	background-color:lightgrey;
 }
