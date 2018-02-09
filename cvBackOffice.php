@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<?php
+
+session_start();
+if(isset($_SESSION["login"]))
+{
+    if($_SESSION["login"] != "bkolenc")
+    {
+        header("Location: http://localhost/CV/cvLogin.php");
+    }
+}
+else
+{
+    header("Location: http://localhost/CV/cvLogin.php");
+}
+
+?>
 <html>
     <head>
         <title>Backoffice CV Batiste Kolenc</title>
@@ -113,6 +129,11 @@
             <input type="text" id="urlLien" class="lien" name="urlLien" placeholder="URL du lien" disabled="disabled" />
             <button type="button" id="goLien" class="go lien" disabled="disabled" >OK</button>
             <button class="del" type="button" id="delLien" disabled="disabled">Del</button> 
+        </div>
+        <div>
+            <form action="cvBK.php">
+                <input type="submit" value="Retour au CV"/>
+            </form>
         </div>
     </body>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

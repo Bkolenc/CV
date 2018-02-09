@@ -182,24 +182,43 @@ function selectLien(selectLien)
 /////////////////////////
 
 function goLieu(selectLieu, coord, entreprise, commune, logo)
-{
-    var dataToPost="action=goLieu&selectLieu="+selectLieu+"&coord="+coord+"&entreprise="+entreprise+"&commune="+commune+"&logo="+logo;
+{   
+    coordVirgule=coord.split(",");
+    console.log(coordVirgule)
+    if(coordVirgule[0].startsWith("[") && coordVirgule[1].endsWith("]"))
+        {
+            chiffre1coord=coordVirgule[0].split("[");
+            chiffre2coord=coordVirgule[1].split("]");
+            if(isNaN(chiffre1coord[1])==false && isNaN(chiffre2coord[0])==false)
+                {
+                    var dataToPost="action=goLieu&selectLieu="+selectLieu+"&coord="+coord+"&entreprise="+entreprise+"&commune="+commune+"&logo="+logo;
     
-    $.ajax({   url:"cvAPI.php",
-                    type:"POST",
-                    data: dataToPost,
-                    dataType:'json',
-                    success: function (data) {
-                        console.log(data);
-                        swal("Lieu inséré !");
-                        resetLieu();
-                        initialisation();
-                            },
-                    error: function(data){
-                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
-                        console.log(data);
-                    }
-                }); 
+                    $.ajax({   url:"cvAPI.php",
+                                    type:"POST",
+                                    data: dataToPost,
+                                    dataType:'json',
+                                    success: function (data) {
+                                        console.log(data);
+                                        swal("Lieu inséré !");
+                                        resetLieu();
+                                        initialisation();
+                                            },
+                                    error: function(data){
+                                        console.log("ça bugue ! Mais embauchez-moi quand même :(");
+                                        console.log(data);
+                                    }
+                                });    
+                }
+            else
+                {
+                    swal("Mauvais format de coordonnées (entrez des chiffres en latitude et longitude, séparés d'une virgule)")
+                }
+        }
+    else
+        {
+            swal("Mauvais format de coordonnées ([latitude,longitude])")
+        }
+
 }
 
 function goXP(selectXP, selectLieu1, intitule, moisDebut, anneeDebut, moisFin, anneeFin)

@@ -52,28 +52,7 @@
 	margin-bottom:20px;
 }
 
-h2
-{
-	text-align:center;
-	margin-bottom:50px;
-}
-select
-{
-	display:block;
-	margin-bottom:20px;
-}
-input
-{
-	display:block;
-	margin-bottom:10px;
-	width:80%;
-}
-textarea
-{
-	display:block;
-	margin-bottom:10px;
-	width:80%;
-}
+
 button
 {
 	display:block;
@@ -89,7 +68,6 @@ button
 	margin-left:auto;
 	margin-right:10px;
 }
-
 button:disabled
 {
 	background-color:#7f8c8d;
@@ -98,7 +76,43 @@ button:disabled:hover
 {
 	background-color:#7f8c8d;
 }
+h2
+{
+	text-align:center;
+	margin-bottom:50px;
+}
+input
+{
+	display:block;
+	margin-bottom:10px;
+	width:80%;
+}
+select
+{
+	display:block;
+	margin-bottom:20px;
+}
 select:disabled
 {
 	background-color:lightgrey;
+}
+textarea
+{
+	display:block;
+	margin-bottom:10px;
+	width:80%;
+}
+
+@media screen and (max-width:1024px)
+{
+	.blackLineContainer
+	{
+		display:none;
+	}
+	.formu
+	{
+		display:block;
+		width:100%;
+	}
+	
 }

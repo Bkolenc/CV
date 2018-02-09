@@ -2,6 +2,7 @@
 		Réfléchir à une autre table nécessaire aux expériences (compétences utilisées ?)
 
 		Compétences
+		Diplômes et leur lieu
 
 	Backoffice
 		API

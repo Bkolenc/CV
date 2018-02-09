@@ -148,7 +148,7 @@ $("#goLien").on("click", function(){
     var selectXP1=$("select#selectXP>option:selected").attr("value");
     var intituleLien=$("#intituleLien").val();
     var urlLien=$("#urlLien").val();
-    
+    console.log(intituleLien+" "+urlLien);
     if(intituleLien!="" && urlLien!="")
     {
         goLien(selectLien, selectXP1, intituleLien, urlLien);
