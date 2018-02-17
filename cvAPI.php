@@ -234,6 +234,13 @@ if(isset($_POST['action']))
                 $arr = array("resultat"=>$idLien);                
             }
 		}
+        if($_POST['action']=="initialisationCarte")
+        {
+            $lieux=$conn->prepare("SELECT * FROM `lieu`");
+            $lieux->execute(array());
+            $tableauLieux = $lieux->fetchAll(PDO::FETCH_ASSOC);
+            $arr = array("resultat"=>$tableauLieux);
+        }
 
         echo json_encode($arr);
 }
