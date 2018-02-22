@@ -241,7 +241,54 @@ if(isset($_POST['action']))
             $tableauLieux = $lieux->fetchAll(PDO::FETCH_ASSOC);
             $arr = array("resultat"=>$tableauLieux);
         }
+        if($_POST['action']=="thread")
+        {
+            $idLieu=$_POST['idLieu'];
+            
+            $XPs=$conn->prepare("SELECT idexp, intitule, debut, fin
+                                FROM experiences
+                                WHERE idlieu= ?");
+            $XPs->execute(array($idLieu));
+            $tableauXPS = $XPs->fetchAll(PDO::FETCH_ASSOC);
+            
+            $missions=$conn->prepare("SELECT experiences.idexp, missions.textemission 
+                                    FROM missions, lieu, experiences
+                                    WHERE lieu.idlieu=experiences.idlieu 
+                                    AND experiences.idexp=missions.idexp 
+                                    AND experiences.idlieu= ?");
+            $missions->execute(array($idLieu));
+            $tableauMissions= $missions->fetchAll(PDO::FETCH_ASSOC);
+            
+            $liens = $conn->prepare("SELECT liens.idexp, liens.intituleLien, liens.urlLien
+                                    FROM liens, lieu, experiences
+                                    WHERE lieu.idlieu=experiences.idlieu
+                                    AND experiences.idexp=liens.idexp
+                                    AND experiences.idlieu= ? ");
+            $liens->execute(array($idLieu));
+            $tableauLiens= $liens->fetchAll(PDO::FETCH_ASSOC);
+            
+            $arr = array("XPs"=>$tableauXPS, "missions"=>$tableauMissions, "liens"=>$tableauLiens);
+        }
+//        if($_POST['action']=="readXP")
+//        {
+//            $idLieu=$_POST['idLieu'];
+//            $XPs=$conn->prepare("SELECT * FROM `experiences` WHERE idlieu= ?");
+//            $XPs->execute(array($idLieu));
+//            $tableauXPs = $XPs->fetchAll(PDO::FETCH_ASSOC);
+//            
+//            $arr = array("resultat"=>$tableauXPs);
+//        }
+//        if($_POST['action']=="readMissions")
+//        {
+//            $idXP=$_POST['idXP'];
+//            $missions=$conn->prepare("SELECT * FROM `missions` WHERE idexp = ?");
+//            $missions->execute(array($idXP));
+//            $tableauMissions = $missions->fetchAll(PDO::FETCH_ASSOC);
+//        }
 
         echo json_encode($arr);
 }
+
 ?>
+
+

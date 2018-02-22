@@ -187,8 +187,6 @@ $("#delLien").on("click", function(){
     deleteLien(selectLien);
 });
 
-
-
 /////////////////////////
 // Fonctions diverses
 /////////////////////////
@@ -225,8 +223,6 @@ function resetMission(){
     $(".mission").attr("disabled","disabled").removeAttr("value");
     $(".mission:text").val("");
     $("#texteMission").val("");
-    
-    
     
 };
 function resetLien(){
