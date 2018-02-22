@@ -1,23 +1,25 @@
- 	Base de données
-		Compétences
-		Diplômes et leur lieu
+ 	Base de donnÃ©es
+		CompÃ©tences
+		DiplÃ´mes et leur lieu
 
 	Backoffice
 		API
-			Debogage éventuel
+			Debogage Ã©ventuel
 
-		requêtes ajax
-			Vérification des données avant envoi
+		requÃªtes ajax
+			VÃ©rification des donnÃ©es avant envoi
 
 		fichier js principal
-			Debogage éventuel CRUD Jquery
+			Debogage Ã©ventuel CRUD Jquery
 
 		fichier php principal
-			Gérer le responsive
+			GÃ©rer le responsive
 
 		CSS
 
 	Connexion
 
 	Accueil avec carte
-	
+		GÃ©rer le style des alertes
+		Mieux prÃ©senter les dates des expÃ©riences
+		
